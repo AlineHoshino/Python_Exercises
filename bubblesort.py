@@ -37,15 +37,28 @@ print(
 )
 
 
-def duplicate_encode(word):
+def turn_into_dictionary(word):
+    i_case = word.lower()
     new_word = dict()
-    for i in range(len(word)):
-        count = 0   
-        for j in range(len(word)):
-            if word[i] == word[j]:
-                count+=1 
-            new_word[f'{word[i]}'] = count   
+    for i in range(len(i_case)):
+        count = 0
+        for j in range(len(i_case)):
+            if i_case[i] == i_case[j]:
+                count += 1
+            new_word[f'{i_case[i]}'] = count
     return new_word
 
 
-print(duplicate_encode("din"))
+def duplicate_encode(word):
+    dict_word = turn_into_dictionary(word)
+    list_word = list()
+    i_case = word.lower()
+    for letter in i_case:
+        if dict_word[letter] == 1:
+            list_word.append("(")
+        else:
+            list_word.append(")")
+    return ''.join(str(e) for e in list_word)
+
+
+print(duplicate_encode("Success"))
