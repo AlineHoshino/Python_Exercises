@@ -62,3 +62,50 @@ def duplicate_encode(word):
 
 
 print(duplicate_encode("Success"))
+
+
+def likes(names):
+    if len(names) == 0:
+        return "no one likes this"
+    if len(names) == 1:
+        return f"{names[0]} likes this"
+    if len(names) == 2:
+        return f"{names[0]} and {names[1]} like this"
+    if len(names) == 3:
+        return f"{names[0]}, {names[1]} and {names[2]} like this"
+    else:
+        qtde = len(names) - 2
+        return f"{names[0]}, {names[1]} and {qtde} others like this"
+
+
+def unique_in_order(sequence):
+    str_list = list(sequence)
+    print(str_list)
+    array = list()
+    if len(str_list) == 0:
+        return []
+    if len(str_list) == 1:
+        return str_list
+    for i in range(len(str_list) - 1):
+        if str_list[i] != str_list[i + 1]:
+            array.append(str_list[i])
+    array.append(str_list[-1])
+    return array
+
+
+def unique_in_order2(iterable):
+    """
+    Peguei o exemplo dessa resolução no codewars, a primeira letra
+    já entra no array
+    e as próximas letras são comparadas com a ultima letra que entrou no array
+    se fro diferente entra no array
+    """
+
+    res = []
+    for item in iterable:
+        if len(res) == 0 or item != res[-1]:
+            res.append(item)
+    return res
+
+
+print(unique_in_order('A'))
