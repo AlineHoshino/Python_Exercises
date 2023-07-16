@@ -37,7 +37,7 @@ def game():
     ]
     word = random.choice(words)
 
-    letters_found = ["_" for letra in word]
+    letters_found = ["_" for letter in word]
 
     chances = 6
 
