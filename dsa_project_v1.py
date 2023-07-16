@@ -37,14 +37,14 @@ def game():
     ]
     word = random.choice(words)
 
-    letters_found = ["_" for letter in word]
+    letters_found = ["_" for letra in word]
 
     chances = 6
 
     wrong_letters = []
 
     while chances > 0:
-        print("".join(letters_found))
+        print(" ".join(letters_found))
         print("\nChances restantes:", chances)
         print("Letras erradas:", " ".join(wrong_letters))
 
